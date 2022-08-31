@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/",
+    "build": "NODE_ENV=production vite build",
     "preview": "vite preview",
     "github": "vite build --mode staging",
-    "gh": "vite build --base=/feriado/"
+    "gh": "NODE_ENV=staging vite build"
   },
   "dependencies": {
     "vue": "^3.2.37"
