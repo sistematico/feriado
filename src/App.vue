@@ -17,5 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>{{ feriado }} - {{ data }}</div>
+  <h1 class="text-3xl font-bold underline">
+    {{ feriado }} - {{ data }}
+  </h1>
 </template>
