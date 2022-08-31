@@ -1,35 +1,29 @@
-name: CD
+name: CI
 
-on: [push]
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
 
 jobs:
-  Deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout site using Github Actions
-        uses: actions/checkout@v3
-      - name: Clone site using Github Actions
-        uses: appleboy/scp-action@master
+      - uses: actions/checkout@v3
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+        
+      - name: Set node version to 16.x
+        uses: actions/setup-node@v3
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASS }}
-          port: ${{ secrets.SSH_PORT }}
-          target: ${{ secrets.PROJECT_PATH }}
-          source: ./
+          node-version: 16.x
+          registry-url: https://registry.npmjs.org/
+          cache: "pnpm"
 
-  Build:
-    needs: Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install Vite using pnpm
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASS }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            cd ${{ secrets.PROJECT_PATH }}
-            pnpm install
-            pnpm run build
+      - name: Install deps
+        run: pnpm install
+
+      - name: Run build
+        run: pnpm run build
