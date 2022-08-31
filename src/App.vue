@@ -6,7 +6,7 @@ const feriado = ref()
 const data = ref()
 
 onMounted(() => {
-  fetch("/feriados.json")
+  fetch("feriados.json")
     .then((response) => response.json())
     .then((data) => data.feriados)
     .then((feriados) => {
