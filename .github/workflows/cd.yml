@@ -15,12 +15,15 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.2
         
-      - name: Set node version to 16.x
+      - name: Set node
         uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          registry-url: https://registry.npmjs.org/
-          cache: "pnpm"
+        # with:
+        #   node-version: 16.x
+        #   registry-url: https://registry.npmjs.org/
+        #   cache: "pnpm"
+
+      #- name: Set pnpm env to use node 16
+      #  run: pnpm env use --global 16
 
       - name: Install deps
         run: pnpm install
