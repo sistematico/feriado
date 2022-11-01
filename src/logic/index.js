@@ -27,11 +27,12 @@ export const diffDays = (d) => {
   let diff = day.getTime() - now.getTime()
   let days = Math.floor(diff / (1000 * 3600 * 24))
 
-  return days > 0 ? days + 1 : days
+  // return days > 0 ? days + 1 : days
+  return days + 1
 }
 
 export const weekDay = (wday) => {
-  const weekday = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"]
+  const weekday = ["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"]
   const d = new Date(wday)
   return weekday[d.getDay()]
 }

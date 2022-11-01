@@ -1,7 +1,7 @@
 # 🌎 [Feriado](https://sistematico.github.io/feriado)
 
 <p align='center'>
-  <img src='https://github.com/sistematico/lucasbrum.net/raw/main/public/favicon/favicon.svg' alt='Feriado' width='300' />
+  <img src='./public/favicon/favicon.svg' alt='Feriado' width='300' />
 </p>
 
 ### 🤖 CI/CD
