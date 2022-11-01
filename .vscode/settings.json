@@ -1,5 +1,6 @@
 {
   "eslint.packageManager": "pnpm",
   "npm.packageManager": "pnpm",
-  "task.allowAutomaticTasks": "on"
+  "task.allowAutomaticTasks": "on",
+  "vetur.ignoreProjectWarning": true
 }
