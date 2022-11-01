@@ -37,4 +37,8 @@ onMounted(() => {
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ diff }}</p>
     </div>
   </a>
+  <footer class="absolute bottom-0 m-4">
+    <p>Projeto desenvolvido com 💛 por <a href="https://lucasbrum.net" target="_blank">Lucas Saliés Brum</a></p>
+    <p>Fontes no <a href="https://github.com/sistematico/feriado" target="_blank">Github</a></p>
+  </footer>
 </template>
